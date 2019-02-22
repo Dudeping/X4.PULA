@@ -1,0 +1,22 @@
+﻿
+@if (X4Env.LoginInfo.IsLogin)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink($"你好，{X4Env.LoginInfo.RoleDescript}({X4Env.LoginInfo.Account})", "X4LoginRedirect", "Account", null, new { title = "个人中心" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()" title = "退出登录">点此安全退出</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "管理网站配置";
+    Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+}
+
+<h2>管理网站配置</h2>
+
+这里是一些网站的全局配置(表单)，比如：
+<ol>
+    <li>友情链接</li>
+    <li>联系人</li>
+    <li>查看联系方式模式(押金、人工审核)</li>
+    <li>等等...</li>
+</ol>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-default">修改</button>
+}

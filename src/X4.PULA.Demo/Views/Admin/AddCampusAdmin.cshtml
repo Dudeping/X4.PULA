@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "添加校园大使";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>添加校园大使</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>请认真填写校园大使信息</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">账号</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">密码</label>
+            <div class="col-md-10">
+                <input type="password" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-offset-2">其他未确认项...</label>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="添加" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

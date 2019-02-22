@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "企业详情";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>腾讯</h2>
+
+显示企业详情：
+<ol>
+    <li>企业名称</li>
+    <li>所在地</li>
+    <li>负责人及联系方式</li>
+    <li>营业执照（图片）</li>
+    <li>等等...</li>
+</ol>
+
+<a href="@Url.Action("Envents",new { id = 2})">查看企业所有活动</a>
+<br />
+<a href="javascript:history.go(-1);">返回企业列表</a>

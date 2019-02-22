@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "注册";
+}
+
+<h2>注册页面</h2>
+
+一.这里要分学校组织注册、企业注册 (实现方式：1.在导航栏出选择; 2.跳转到该页面再进行一次选择; 3.选择相应的类型改变对应填写的信息)
+<br />
+<br />
+
+二.学校组织注册需要填写的内容
+<ol>
+    <li>学生组织名称</li>
+    <li>学生组织性质</li>
+    <li>负责人及联系方式</li>
+    <li>所属学校</li>
+    <li>...</li>
+</ol>
+
+三.企业注册需要填写的内容
+<ol>
+    <li>企业名称</li>
+    <li>所在地(省市区联动选择)</li>
+    <li>负责人及联系方式</li>
+    <li>营业执照（图片）</li>
+    <li>...</li>
+</ol>
+
+四.测试
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>选择注册类别</label>
+        <select class="form-control" name="type">
+            <option value="org">学校组织</option>
+            <option value="cmp">企业</option>
+        </select>
+    </div>
+
+    <button class="btn btn-default" type="submit">提交</button>
+
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+}

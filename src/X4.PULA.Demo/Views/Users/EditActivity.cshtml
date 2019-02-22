@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "编辑活动";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>编辑活动</h2>
+
+填写活动详细信息：
+<ol>
+    <li>活动名称</li>
+    <li>活动简介</li>
+    <li>策划书（选择性上传）</li>
+    <li>活动时间</li>
+    <li>主办及承办方</li>
+    <li>预计规模</li>
+    <li>所需资金</li>
+    <li>负责人</li>
+    <li>联系方式</li>
+</ol>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <button class="btn btn-default" type="submit">提交</button>
+}

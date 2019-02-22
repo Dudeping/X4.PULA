@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "活动详情";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>新版游戏宣传</h2>
+
+一.活动概况
+<ol>
+    <li>活动名称</li>
+    <li>活动简介</li>
+    <li>活动性质（考虑地推等活动的申请）</li>
+    <li>开始时间(时间选择、校验)</li>
+    <li>结束时间(时间选择、校验)</li>
+    <li>主办及承办方</li>
+    <li>预计规模</li>
+    <li>赞助资金</li>
+    <li>预计规模</li>
+    <li>负责人</li>
+    <li>联系方式</li>
+</ol>
+
+二、申请承办的活动
+<div class="panel panel-default">
+    <div class="panel-heading">活动列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>性质</th>
+                <th>负责人</th>
+                <th>联系方式</th>
+                <th>所需资金</th>
+                <th>状态</th>
+                <th>详情</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>信工院2017趣味运动会</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 2 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>信工院2017趣味运动会</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已获赞助</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 3 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>信工院2017趣味运动会</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未完成</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 4 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>信工院2017趣味运动会</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未审核</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 5 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<a href="javascript:history.go(-1)">返回活动列表</a>

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "评价活动";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>活动评价</h2>
+
+一.活动概况
+<ol>
+    <li>活动名称</li>
+    <li>活动简介</li>
+    <li>策划书（文件docx、doc、pdf）（选择性上传）</li>
+    <li>开始时间(时间选择、校验)</li>
+    <li>结束时间(时间选择、校验)</li>
+    <li>主办及承办方</li>
+    <li>预计规模</li>
+    <li>所需资金</li>
+    <li>负责人</li>
+    <li>联系方式</li>
+</ol>
+
+二、完成情况
+<ol>
+    <li>现场活动情况</li>
+    <li>活动图片</li>
+    <li></li>
+    <li>是否完成企业预计人数规模</li>
+    <li>现场组织是否有序</li>
+    <li>参与人员是否积极响应</li>
+    <li>是否发生意外情况</li>
+    <li>是否满足组织方物质需求</li>
+</ol>
+
+三、评分
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <label>仿造美团等评分做一个选择</label>
+    <br />
+    <button class="btn btn-success" type="submit">提交</button>
+    <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+}

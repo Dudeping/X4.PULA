@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "活动详情";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>信工院2017趣味运动会</h2>
+
+一.活动概况
+<ol>
+    <li>活动名称</li>
+    <li>活动简介</li>
+    <li>策划书（文件docx、doc、pdf）（选择性上传）</li>
+    <li>开始时间(时间选择、校验)</li>
+    <li>结束时间(时间选择、校验)</li>
+    <li>主办及承办方</li>
+    <li>预计规模</li>
+    <li>所需资金</li>
+</ol>
+
+二、申请查看联系方式
+
+@using (Html.BeginForm("Apply","Users", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <button class="btn btn-success btn-sm" type="submit">申请</button>
+    <button class="btn btn-default btn-sm" type="button" onclick="history.go(-1)">返回</button>
+}
+
+<br />
+三、赞助
+<br />
+@Html.ActionLink("赞助", "Deal", new { id = 2 }, new { @class = "btn btn-info btn-sm" })
+<button class="btn btn-default btn-sm" type="button" onclick="history.go(-1)">返回</button>

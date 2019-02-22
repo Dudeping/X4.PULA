@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "赞助";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>这里应该是转账页面</h2>
+
+@using (Html.BeginForm("Deal", "Users", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <button class="btn btn-success" type="submit">转账</button>
+    <button class="btn btn-default" type="button" onclick="history.go(-1)">返回</button>
+}

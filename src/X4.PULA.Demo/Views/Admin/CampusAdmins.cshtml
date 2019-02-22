@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "校园大使";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>
+    管理校园大使 
+    @Html.ActionLink("添加", "AddCampusAdmin", null, new { @class = "btn btn-success btn-xs" })
+    @using (Html.BeginForm("SearchCampusAdmin", "Admin", FormMethod.Post, new { @class = "bs-example bs-example-form pull-right form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="input-group">
+            <input type="text" id="searchCAdmin" class="form-control" placeholder="输入账号或姓名" name="searchStr">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">搜索</button>
+            </div>
+        </div>
+    }
+</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">校园大使列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>账号</th>
+                <th>未确认的列</th>
+                <th>删除</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>x40001</td>
+                <td>...</td>
+                <td>
+                    @using (Html.BeginForm("DelCampusAdmin", "Admin", new { id = 1 }, FormMethod.Post, new { id = "delx40001" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a class="btn-xs text-danger" href="javascript:document.getElementById('delx40001').submit()" title="点击删除该校园大使x40001"><i class="glyphicon glyphicon-trash" aria-label="删除" aria-hidden="true"></i></a>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>x40002</td>
+                <td>...</td>
+                <td>
+                    @using (Html.BeginForm("DelCampusAdmin", "Admin", new { id = 2 }, FormMethod.Post, new { id = "delx40002" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <a class="btn-xs text-danger" href="javascript:document.getElementById('delx40002').submit()" title="点击删除该校园大使x40002"><i class="glyphicon glyphicon-trash" aria-label="删除" aria-hidden="true"></i></a>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>x40003</td>
+                <td>...</td>
+                <td>
+                    @using (Html.BeginForm("DelCampusAdmin", "Admin", new { id = 3 }, FormMethod.Post, new { id = "delx40003" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <a class="btn-xs text-danger" href="javascript:document.getElementById('delx40003').submit()" title="点击删除该校园大使x40003"><i class="glyphicon glyphicon-trash" aria-label="删除" aria-hidden="true"></i></a>
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

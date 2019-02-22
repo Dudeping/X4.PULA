@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "学校详情";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>四川农业大学</h2>
+
+显示学校详情：
+<ol>
+    <li>学校名称</li>
+    <li>所在地</li>
+    <li>学校方代表人及联系方式</li>
+    <li>授权合同材料（图片）</li>
+    <li>等等...</li>
+</ol>
+
+@Html.ActionLink("查看所有组织", "Organizes", new { id = 2 })
+<br />
+<a href="javascript:history.go(-1)">返回学校列表</a>

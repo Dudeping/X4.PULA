@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "活动管理";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>
+    活动列表
+    @Html.ActionLink("添加", "AddActivity", null, new { @class = "btn btn-success btn-xs" })
+    @using (Html.BeginForm("SearchActs", "Users", FormMethod.Post, new { @class = "bs-example bs-example-form pull-right form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="input-group">
+            <input type="text" id="SearchAct" class="form-control" placeholder="活动标题" name="SearchStr">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">搜索</button>
+            </div>
+        </div>
+    }
+</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">活动列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>性质</th>
+                <th>负责人</th>
+                <th>联系方式</th>
+                <th>所需资金</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>
+                    <a class="btn-xs" href="@Url.Action("Activity", "Admin", new { id = 2 })" title="点击查看活动详细信息"><i class="glyphicon glyphicon-eye-open" aria-label="查看" aria-hidden="true"></i></a>
+                    <a class="btn-xs" href="@Url.Action("EditActivity", "Users", new { id = 2 })" title="点击修改活动详细信息"><i class="glyphicon glyphicon-edit" aria-label="修改" aria-hidden="true"></i></a>
+                    @using (Html.BeginForm("DelActivity", "Users", new { id = 2 }, FormMethod.Post, new { id = "del2", style = "display: inline-block;" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <a class="text-danger btn-xs" href="javascript:document.getElementById('del2').submit()" title="点击删除该活动"><i class="glyphicon glyphicon-trash" aria-label="删除" aria-hidden="true"></i></a>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已获赞助</td>
+                <td>
+                    <a class="btn-xs" href="@Url.Action("Activity", "Admin", new { id = 2 })" title="点击查看活动详细信息"><i class="glyphicon glyphicon-eye-open" aria-label="查看" aria-hidden="true"></i></a>
+                    <a class="btn-xs" href="@Url.Action("EditActivity", "Users", new { id = 2 })" title="点击修改活动详细信息"><i class="glyphicon glyphicon-edit" aria-label="修改" aria-hidden="true"></i></a>
+                    @using (Html.BeginForm("DelActivity", "Users", new { id = 2 }, FormMethod.Post, new { id = "del2", style = "display: inline-block;" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <a class="text-danger btn-xs" href="javascript:document.getElementById('del2').submit()" title="点击删除该活动"><i class="glyphicon glyphicon-trash" aria-label="删除" aria-hidden="true"></i></a>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未完成</td>
+                <td>
+                    <a class="btn-xs" href="@Url.Action("Activity", "Admin", new { id = 2 })" title="点击查看活动详细信息"><i class="glyphicon glyphicon-eye-open" aria-label="查看" aria-hidden="true"></i></a>
+                    <a class="btn-xs" href="@Url.Action("EditActivity", "Users", new { id = 2 })" title="点击修改活动详细信息"><i class="glyphicon glyphicon-edit" aria-label="修改" aria-hidden="true"></i></a>
+                    @using (Html.BeginForm("DelActivity", "Users", new { id = 2 }, FormMethod.Post, new { id = "del2", style = "display: inline-block;" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <a class="text-danger btn-xs" href="javascript:document.getElementById('del2').submit()" title="点击删除该活动"><i class="glyphicon glyphicon-trash" aria-label="删除" aria-hidden="true"></i></a>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>信工院2017趣味运动会</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未审核</td>
+                <td>
+                    <a class="btn-xs" href="@Url.Action("Activity", "Admin", new { id = 2 })" title="点击查看活动详细信息"><i class="glyphicon glyphicon-eye-open" aria-label="查看" aria-hidden="true"></i></a>
+                    <a class="btn-xs" href="@Url.Action("EditActivity", "Users", new { id = 2 })" title="点击修改活动详细信息"><i class="glyphicon glyphicon-edit" aria-label="修改" aria-hidden="true"></i></a>
+                    @using (Html.BeginForm("DelActivity", "Users", new { id = 2 }, FormMethod.Post, new { id = "del2", style = "display: inline-block;" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <a class="text-danger btn-xs" href="javascript:document.getElementById('del2').submit()" title="点击删除该活动"><i class="glyphicon glyphicon-trash" aria-label="删除" aria-hidden="true"></i></a>
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

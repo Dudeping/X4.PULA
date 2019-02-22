@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "查看组织";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>
+    查看组织
+    @using (Html.BeginForm("SearchOrgs", "Admin", FormMethod.Post, new { @class = "bs-example bs-example-form pull-right form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="input-group">
+            <input type="text" id="searchOrg" class="form-control" placeholder="本校组织" name="searchStr">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">搜索</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="javascript:$('#searchOrg').attr('placeholder', '本校组织')">本校组织(默认)</a></li>
+                    <li><a href="javascript:$('#searchOrg').attr('placeholder', '所有组织')">所有组织</a></li>
+                </ul>
+            </div>
+        </div>
+    }
+</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">组织列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>性质</th>
+                <th>负责人</th>
+                <th>联系方式</th>
+                <th>详情</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>四川农业大学社联</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Organize", new { id = 2 }, new { title = "点击查看组织详情" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>四川农业大学社联</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Organize", new { id = 3 }, new { title = "点击查看组织详情" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>四川农业大学社联</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Organize", new { id = 4 }, new { title = "点击查看组织详情" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>四川农业大学社联</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Organize", new { id = 5 }, new { title = "点击查看组织详情" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

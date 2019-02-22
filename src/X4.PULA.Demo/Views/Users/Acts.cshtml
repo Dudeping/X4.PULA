@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "组织活动";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>
+    组织活动列表
+    @using (Html.BeginForm("SearchActs", "Users", FormMethod.Post, new { @class = "bs-example bs-example-form pull-right form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="input-group">
+            <input type="text" id="SearchAct" class="form-control" placeholder="活动标题" name="SearchStr">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">搜索</button>
+            </div>
+        </div>
+    }
+</h2>
+<div class="text-danger">
+    注：1.还需要按时间筛选，比如一个月，一个季度，然后再放一个时间选择器(开始时间，结束时间)<br />
+    2.还需按地区筛选等等
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">活动列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>性质</th>
+                <th>负责人</th>
+                <th>联系方式</th>
+                <th>所需资金</th>
+                <th>状态</th>
+                <th>详情</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 2 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已获赞助</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 3 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未完成</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 4 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>信工院2017趣味运动会</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未审核</td>
+                <td>@Html.ActionLink("查看", "Activity", new { id = 5 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

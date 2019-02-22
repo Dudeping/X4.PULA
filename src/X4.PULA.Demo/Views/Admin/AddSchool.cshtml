@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "录入学校";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>录入学校</h2>
+
+此页面录入学校信息(表单)，含：
+<ol>
+    <li>学校名称</li>
+    <li>所在地</li>
+    <li>学校方代表人及联系方式</li>
+    <li>授权合同材料（图片）</li>
+    <li>等等...</li>
+</ol>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <button class="btn btn-default" type="submit">提交</button>
+}

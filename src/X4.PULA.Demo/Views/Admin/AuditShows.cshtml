@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "审核申请";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>待审核的查看申请</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">申请列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>申请者</th>
+                <th>活动</th>
+                <th>时间</th>
+                <th>审核</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>腾讯</td>
+                <td>信工院2017趣味运动会</td>
+                <td>2017/11/9 08:46:23</td>
+                <td>@Html.ActionLink("审核", "AuditShow", new { id = 2 }, new { title = "点击审核该申请" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>腾讯</td>
+                <td>信工院2017趣味运动会</td>
+                <td>2017/11/9 08:46:23</td>
+                <td>@Html.ActionLink("审核", "AuditShow", new { id = 2 }, new { title = "点击审核该申请" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>腾讯</td>
+                <td>信工院2017趣味运动会</td>
+                <td>2017/11/9 08:46:23</td>
+                <td>@Html.ActionLink("审核", "AuditShow", new { id = 2 }, new { title = "点击审核该申请" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>腾讯</td>
+                <td>信工院2017趣味运动会</td>
+                <td>2017/11/9 08:46:23</td>
+                <td>@Html.ActionLink("审核", "AuditShow", new { id = 2 }, new { title = "点击审核该申请" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

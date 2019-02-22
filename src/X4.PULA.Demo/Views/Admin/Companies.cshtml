@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "管理企业";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>企业列表</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">企业列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>所在地</th>
+                <th>负责人</th>
+                <th>联系方式</th>
+                <th>详情</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>腾讯</td>
+                <td>深圳</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Company", new { id = 2 }, new { title = "点击查看企业详情" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>腾讯</td>
+                <td>深圳</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Company", new { id = 3 }, new { title = "点击查看企业详情" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>腾讯</td>
+                <td>深圳</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Company", new { id = 4 }, new { title = "点击查看企业详情" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>腾讯</td>
+                <td>深圳</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "Company", new { id = 5 }, new { title = "点击查看企业详情" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

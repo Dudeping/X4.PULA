@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "组织详情";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>四川农业大学社联</h2>
+
+显示组织详情：
+<ol>
+    <li>学生组织名称</li>
+    <li>学生组织性质</li>
+    <li>负责人及联系方式</li>
+    <li>等等...</li>
+</ol>
+
+@Html.ActionLink("查看所有活动", "Activities", new { id = 2 })
+<br />
+<a href="javascript:history.go(-1)">返回组织列表</a>

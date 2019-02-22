@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "提交活动资料";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>提交活动资料</h2>
+
+一.活动介绍
+<ol>
+    <li>活动名称</li>
+    <li>活动简介</li>
+    <li>策划书（文件docx、doc、pdf）（选择性上传）</li>
+    <li>开始时间(时间选择、校验)</li>
+    <li>结束时间(时间选择、校验)</li>
+    <li>主办及承办方</li>
+    <li>预计规模</li>
+    <li>所需资金</li>
+    <li>负责人</li>
+    <li>联系方式</li>
+</ol>
+<br />
+@using (Html.BeginForm("SubmitSrc", "Admin", new { id = 2 }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>提交的资料(表单)：</label>
+        <ol>
+            <li>现场活动情况</li>
+            <li>活动图片</li>
+            <li></li>
+            <li>是否完成企业预计人数规模</li>
+            <li>现场组织是否有序</li>
+            <li>参与人员是否积极响应</li>
+            <li>是否发生意外情况</li>
+            <li>是否满足组织方物质需求</li>
+        </ol>
+    </div>
+
+    <button type="submit" class="btn btn-default">提交</button>
+}

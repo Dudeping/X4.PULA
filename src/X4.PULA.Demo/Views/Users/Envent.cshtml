@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "企业活动详情";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>活动详情</h2>
+
+一、活动概述
+<ol>
+    <li>活动名称</li>
+    <li>活动简介</li>
+    <li>活动性质（考虑地推等活动的申请）</li>
+    <li>活动时间</li>
+    <li>主办及承办方</li>
+    <li>面向群体</li>
+    <li>预计规模</li>
+    <li>赞助金额</li>
+    <li>联系人</li>
+    <li>联系方式</li>
+</ol>
+
+二、申请承办
+<br />
+@Html.ActionLink("申请", "AddActivity", null, new { @class = "btn btn-success" })
+<a href="javascript:history.go(-1)" class = "btn btn-default">返回</a>

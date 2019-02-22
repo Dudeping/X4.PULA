@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "审核企业";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>腾讯</h2>
+
+显示企业详情：
+<ol>
+    <li>企业名称</li>
+    <li>所在地</li>
+    <li>负责人及联系方式</li>
+    <li>营业执照（图片）</li>
+    <li>等等...</li>
+</ol>
+
+<br />
+@using (Html.BeginForm("CpyAuditPass", "Admin", new { id = 2 }, FormMethod.Post, new { id = "auditForm" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>不通过原因</label>
+        <textarea name="reason" class="form-control" rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">通过</button>
+    <button type="submit" onclick="javascript:$('#auditForm').attr('action','@Url.Action("CpyAuditNotPass", "Admin", new { id = 2 })')" class="btn btn-danger">不通过</button>
+}

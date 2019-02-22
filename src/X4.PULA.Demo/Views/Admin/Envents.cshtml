@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "活动列表";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>
+    活动列表
+
+    @using (Html.BeginForm("SearchActs", "Admin", FormMethod.Post, new { @class = "bs-example bs-example-form pull-right form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="input-group">
+            <input type="text" id="SearchAct" class="form-control" placeholder="本组织活动" name="SearchStr">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">搜索</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="javascript:$('#SearchAct').attr('placeholder', '本组织活动')">本组织活动(默认)</a></li>
+                    <li><a href="javascript:$('#SearchAct').attr('placeholder', '所有活动')">所有活动</a></li>
+                </ul>
+            </div>
+        </div>
+    }
+</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">活动列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>性质</th>
+                <th>负责人</th>
+                <th>联系方式</th>
+                <th>赞助金额</th>
+                <th>活动时间</th>
+                <th>面向群体</th>
+                <th>预计规模</th>
+                <th>状态</th>
+                <th>详情</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>新版游戏宣传</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>2017/11/08 23:18:34</td>
+                <td>学生</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>@Html.ActionLink("查看", "Envent", new { id = 2 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>新版游戏宣传</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>2017/11/08 23:18:34</td>
+                <td>群众</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>@Html.ActionLink("查看", "Envent", new { id = 3 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>新版游戏宣传</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>2017/11/08 23:18:34</td>
+                <td>群众</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>@Html.ActionLink("查看", "Envent", new { id = 4 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>新版游戏宣传</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>2017/11/08 23:18:34</td>
+                <td>群众</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>@Html.ActionLink("查看", "Envent", new { id = 5 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

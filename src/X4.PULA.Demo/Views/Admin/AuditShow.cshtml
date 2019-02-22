@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "申请查看";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>信工院2017趣味运动会</h2>
+
+一.活动概况
+<ol>
+    <li>活动名称</li>
+    <li>活动简介</li>
+    <li>策划书（文件docx、doc、pdf）（选择性上传）</li>
+    <li>开始时间(时间选择、校验)</li>
+    <li>结束时间(时间选择、校验)</li>
+    <li>主办及承办方</li>
+    <li>预计规模</li>
+    <li>所需资金</li>
+    <li>负责人</li>
+    <li>联系方式</li>
+</ol>
+
+二、企业情况
+<ol>
+    <li>企业名称</li>
+    <li>所在地</li>
+    <li>负责人及联系方式</li>
+    <li>营业执照（图片）</li>
+    <li>等等...</li>
+</ol>
+
+<br />
+@using (Html.BeginForm("ShowAuditPass", "Admin", new { id = 2 }, FormMethod.Post, new { id = "auditForm" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>不通过原因</label>
+        <textarea name="reason" class="form-control" rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">通过</button>
+    <button type="submit" onclick="javascript:$('#auditForm').attr('action','@Url.Action("ShowAuditNotPass", "Admin", new { id = 2 })')" class="btn btn-danger">不通过</button>
+}

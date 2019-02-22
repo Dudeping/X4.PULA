@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "管理学校";
+    Layout = "~/Views/Shared/_LayoutCASAdmin.cshtml";
+}
+
+<h2>
+    管理学校 
+    @Html.ActionLink("添加", "AddSchool", null, new { @class = "btn btn-success btn-xs" })
+
+    @using (Html.BeginForm("SearchSchs", "Admin", FormMethod.Post, new { @class = "bs-example bs-example-form pull-right form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="input-group">
+            <input type="text" id="searchSch" class="form-control" placeholder="输入学校名" name="searchSch">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">搜索</button>
+            </div>
+        </div>
+    }
+</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">学校列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>所在地</th>
+                <th>联系人</th>
+                <th>联系方式</th>
+                <th>详情</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>四川农业大学</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "School", new { id = 2 }, new { title="点击查看学校详情" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>四川农业大学</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "School", new { id = 3 }, new { title = "点击查看学校详情" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>四川农业大学</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "School", new { id = 4 }, new { title = "点击查看学校详情" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>四川农业大学</td>
+                <td>四川雅安</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>@Html.ActionLink("查看", "School", new { id = 5 }, new { title = "点击查看学校详情" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

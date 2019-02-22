@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 普拉网</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("普拉网", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("我的主页", "X4LoginRedirect", "Account", null, new { title = "个人中心" })</li>
+                    @if (X4Env.LoginInfo.IsInRole(X4Env.X4Roles.School))
+                    {
+                        <li>@Html.ActionLink("组织管理", "Organizes", "Admin", new { id = 2 }, null)</li>
+                    }
+                    else if (X4Env.LoginInfo.IsInRole(X4Env.X4Roles.Organize))
+                    {
+                        <li>@Html.ActionLink("活动管理", "Activities", "Users")</li>
+                        <li>@Html.ActionLink("企业活动", "Envents", "Users")</li>
+                        <li>@Html.ActionLink("活动评价", "OrgActComs", "Users")</li>
+                        <li>@Html.ActionLink("组织信息", "OrgInfo", "Users")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("活动管理", "CpyEnvents", "Users")</li>
+                        <li>@Html.ActionLink("组织活动", "Acts", "Users")</li>
+                        <li>@Html.ActionLink("活动评价", "CpyActComs", "Users")</li>
+                        <li>@Html.ActionLink("企业信息", "CpyInfo", "Users")</li>
+                    }
+                    <li>@Html.ActionLink("赞助记录", "Index", "Logs")</li>
+                    <li>@Html.ActionLink("系统消息", "Index", "Letters")</li>
+                </ul>
+
+                @Html.Partial("_PartialAccount")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 普拉网</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

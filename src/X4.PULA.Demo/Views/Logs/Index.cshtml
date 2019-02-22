@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "赞助记录";
+}
+
+<h2>
+    赞助记录
+    @if (!X4Env.LoginInfo.IsInRole(X4Env.X4Roles.Organize))
+    {
+        using (Html.BeginForm("Index", "Logs", FormMethod.Get, new { @class = "bs-example bs-example-form pull-right form-inline" }))
+        {
+            <div class="input-group">
+                <input type="text" id="SearchLogs" name="SearchStr" class="form-control" placeholder="@(X4Env.LoginInfo.IsInRole(X4Env.X4Roles.SuperAdmin)?"账号或姓名":X4Env.LoginInfo.IsInRole(X4Env.X4Roles.CampusAdmin)?"学校名":"组织名")">
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default">搜索</button>
+                    @if (!X4Env.LoginInfo.IsInRole(X4Env.X4Roles.School))
+                    {
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            @if (X4Env.LoginInfo.IsInRole(X4Env.X4Roles.SysAdmin))
+                            {
+                                <li><a href="javascript:$('#SearchLogs').attr('placeholder', '账号或姓名')" title="点击搜索某校园大使的记录">校园大使(默认)</a></li>
+                                <li><a href="javascript:$('#SearchLogs').attr('placeholder', '学校名')" title="点击搜索某学校的记录">搜索学校</a></li>
+                                <li><a href="javascript:$('#SearchLogs').attr('placeholder', '组织名')" title="点击搜索某组织的记录">搜索组织</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="javascript:$('#SearchLogs').attr('placeholder', '学校名')" title="点击搜索某学校的记录">搜索学校(默认)</a></li>
+                                <li><a href="javascript:$('#SearchLogs').attr('placeholder', '组织名')" title="点击搜索某组织的记录">搜索组织</a></li>
+                            }
+                        </ul>
+                    }
+                </div>
+
+            </div>
+        }
+    }
+</h2>
+
+<div class="text-danger">
+    注：应该统计一个总金额，还需要按时间筛选，比如一个月，一个季度，然后再放一个时间选择器(开始时间，结束时间)
+</div>
+<br />
+<div class="panel panel-default">
+    <div class="panel-heading">赞助列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>活动名</th>
+                <th>性质</th>
+                <th>组织名</th>
+                <th>赞助方</th>
+                <th>资金</th>
+                <th>时间</th>
+                <th>详情</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>信息工程学院</td>
+                <td>腾讯</td>
+                <td>200</td>
+                <td>2017/11/8 11:08:23</td>
+                <td>@Html.ActionLink("查看", "Activity", "Admin", new { id = 2 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>信息工程学院</td>
+                <td>腾讯</td>
+                <td>200</td>
+                <td>2017/11/8 11:08:23</td>
+                <td>@Html.ActionLink("查看", "Activity", "Admin", new { id = 3 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>信息工程学院</td>
+                <td>腾讯</td>
+                <td>200</td>
+                <td>2017/11/8 11:08:23</td>
+                <td>@Html.ActionLink("查看", "Activity", "Admin", new { id = 4 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>信息工程学院</td>
+                <td>腾讯</td>
+                <td>200</td>
+                <td>2017/11/8 11:08:23</td>
+                <td>@Html.ActionLink("查看", "Activity", "Admin", new { id = 5 }, new { title = "点击查看活动详情" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "活动评价列表";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>
+    待评价活动
+</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">活动列表</div>
+    <div style="margin:0 10px">
+        <table class="table table-hover" style="margin:0">
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>性质</th>
+                <th>负责人</th>
+                <th>联系方式</th>
+                <th>所需资金</th>
+                <th>状态</th>
+                <th>评价</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>@Html.ActionLink("评价", "OrgActCom", new { id = 2 }, new { title = "点击评价活动" })</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>已获赞助</td>
+                <td>@Html.ActionLink("评价", "OrgActCom", new { id = 3 }, new { title = "点击评价活动" })</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>信工院2017趣味运动会</td>
+                <td>自发起</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未完成</td>
+                <td>@Html.ActionLink("评价", "OrgActCom", new { id = 4 }, new { title = "点击评价活动" })</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>信工院2017趣味运动会</td>
+                <td>地推</td>
+                <td>杨阳洋</td>
+                <td>13865451256</td>
+                <td>200</td>
+                <td>未审核</td>
+                <td>@Html.ActionLink("评价", "OrgActCom", new { id = 5 }, new { title = "点击评价活动" })</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer" style="background-color:white">
+        <ul class="pagination pagination-sm" style="margin:0">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+</div>
